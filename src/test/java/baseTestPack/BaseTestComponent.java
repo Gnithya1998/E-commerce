@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjectModel_ecom.HomePage;
-import pageObjectModel_ecom.RegistrationPage;
 
 public class BaseTestComponent {
 	

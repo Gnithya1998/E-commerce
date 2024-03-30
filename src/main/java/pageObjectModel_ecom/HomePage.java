@@ -23,6 +23,18 @@ public class HomePage extends AbstractComponent{
 	
 	@FindBy(css = "div[class='carousel-inner']")
 	WebElement homeAds;
+	
+	@FindBy(xpath = "//a/child::b")
+	WebElement userNameTxt;
+	
+	@FindBy(css = "a[href='/delete_account']")
+	WebElement deleteBtn;
+	
+	@FindBy(xpath = "//h2/b")
+	WebElement deleteMsgElement;
+	
+	@FindBy(css = "a[data-qa='continue-button']")
+	WebElement ctnBtn;
 
 	public void goTo() {
 
@@ -41,5 +53,25 @@ public class HomePage extends AbstractComponent{
 		boolean homeDisplay = homeAds.isDisplayed();
 		return homeDisplay;
 	}
+	
+	public String usernameCheck() {
+		
+		String userString = userNameTxt.getText();
+		return userString;
+	}
+	
+	public boolean deleteAcc() {
+		
+		deleteBtn.click();
+		return deleteMsgElement.isDisplayed();
+		
+	}
+	
+	public void cntBtnClick() {
+		
+		ctnBtn.click();
+	}
+	
+	
 
 }
