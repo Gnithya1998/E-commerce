@@ -35,6 +35,12 @@ public class HomePage extends AbstractComponent{
 	
 	@FindBy(css = "a[data-qa='continue-button']")
 	WebElement ctnBtn;
+	
+	@FindBy(xpath = "//a[@href='/logout']")
+	WebElement logoutBtn;
+	
+	@FindBy(css = "a[href='/contact_us']")
+	WebElement contactUsLink;
 
 	public void goTo() {
 
@@ -70,6 +76,18 @@ public class HomePage extends AbstractComponent{
 	public void cntBtnClick() {
 		
 		ctnBtn.click();
+	}
+	
+	public void logoutAcc() {
+		
+		logoutBtn.click();
+	}
+	
+	public ContactUsPage contactUs() {
+		
+		contactUsLink.click();
+		ContactUsPage contactUsPage = new ContactUsPage(driver);
+		return contactUsPage;
 	}
 	
 	

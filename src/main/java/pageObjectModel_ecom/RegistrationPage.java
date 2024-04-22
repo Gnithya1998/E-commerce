@@ -1,5 +1,6 @@
 package pageObjectModel_ecom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -93,6 +94,26 @@ public class RegistrationPage extends AbstractComponent {
 	
 	@FindBy(css = "a[data-qa='continue-button']")
 	WebElement cntBtn;
+	
+	@FindBy(xpath = "//h2[contains(text(),'Login')]")
+	WebElement loginUserTxt;
+	
+	@FindBy(name = "email")
+	WebElement loginEmail;
+	
+	@FindBy(css = "input[data-qa='login-password']")
+	WebElement pswBox;
+	
+	@FindBy(css = "button[data-qa='login-button']")
+	WebElement loginBtn;
+	
+	@FindBy(css = "p[style='color: red;']")
+	WebElement errorMsg;
+	
+	
+	
+	By incorrectMsgBy = By.cssSelector("p[style='color: red;']");
+	
 
 	public String newUserSignUp() {
 
@@ -154,6 +175,25 @@ public class RegistrationPage extends AbstractComponent {
 	public void homeNavigation() {
 		
 		cntBtn.click();
+	}
+	
+	public String userLogin() {
+		
+		String loginUserMsg = loginUserTxt.getText();
+		return loginUserMsg;
+	}
+	
+	public void Login(String email, String password) {
+		
+		loginEmail.sendKeys(email);
+		pswBox.sendKeys(password);
+		loginBtn.click();
+	}
+	
+	public String errorMsgElement() {
+		
+		waitForElementToBePresent(incorrectMsgBy);
+		return errorMsg.getText();
 	}
 	
 	

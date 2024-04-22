@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Team EERO\AppData\Local\Temp\testng-eclipse--1168402254\testng-customsuite.xml</span>
+                    <span>C:\Users\Team EERO\AppData\Local\Temp\testng-eclipse--1578371507\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testSuite.TestCase1_RegisterUser" class="method navigator-link" hash-for-method="TestCase1">TestCase1</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Module_Practices.Excel_DataProvider" class="method navigator-link" hash-for-method="dataTest(Like, Instagram, 10)">dataTest(Like, Instagram, 10)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Module_Practices.Excel_DataProvider" class="method navigator-link" hash-for-method="dataTest(Love, Youtube, 25)">dataTest(Love, Youtube, 25)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Module_Practices.Excel_DataProvider" class="method navigator-link" hash-for-method="dataTest(Hate, Facebook, 1)">dataTest(Hate, Facebook, 1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,14 +130,31 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testSuite.TestCase1_RegisterUser</span>
+              <span class="class-name">Module_Practices.Excel_DataProvider</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TestCase1">
-                  </a> <!-- TestCase1 -->
-                  <span class="method-name">TestCase1</span>
+                  <a name="dataTest(Like, Instagram, 10)">
+                  </a> <!-- dataTest(Like, Instagram, 10) -->
+                  <span class="method-name">dataTest</span>
+                  <span class="parameters">(Like, Instagram, 10)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dataTest(Love, Youtube, 25)">
+                  </a> <!-- dataTest(Love, Youtube, 25) -->
+                  <span class="method-name">dataTest</span>
+                  <span class="parameters">(Love, Youtube, 25)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dataTest(Hate, Facebook, 1)">
+                  </a> <!-- dataTest(Hate, Facebook, 1) -->
+                  <span class="method-name">dataTest</span>
+                  <span class="parameters">(Hate, Facebook, 1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +162,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Team EERO\AppData\Local\Temp\testng-eclipse--1168402254\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Team EERO\AppData\Local\Temp\testng-eclipse--1578371507\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +171,7 @@
 &lt;suite parallel=&quot;none&quot; name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testSuite.TestCase1_RegisterUser&quot;/&gt;
+      &lt;class name=&quot;Module_Practices.Excel_DataProvider&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -184,16 +211,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TestCase1')
-data.setCell(0, 2, 'testSuite.TestCase1_RegisterUser')
-data.setCell(0, 3, 24989);
+data.setCell(0, 1, 'dataTest')
+data.setCell(0, 2, 'Module_Practices.Excel_DataProvider')
+data.setCell(0, 3, 8);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'dataTest')
+data.setCell(1, 2, 'Module_Practices.Excel_DataProvider')
+data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'dataTest')
+data.setCell(2, 2, 'Module_Practices.Excel_DataProvider')
+data.setCell(2, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 9 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -219,19 +254,19 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testSuite.TestCase1_RegisterUser</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">SetUp</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
+              <div class="chronological-class-name">Module_Practices.Excel_DataProvider</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">TestCase1</span>
-                <span class="method-start">6855 ms</span>
+                <span class="method-name">dataTest(Like, Instagram, 10)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">31847 ms</span>
-              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">dataTest(Hate, Facebook, 1)</span>
+                <span class="method-start">9 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dataTest(Love, Youtube, 25)</span>
+                <span class="method-start">10 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
