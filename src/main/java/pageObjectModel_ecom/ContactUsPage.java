@@ -1,5 +1,8 @@
 package pageObjectModel_ecom;
 
+import java.io.IOException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,7 +26,7 @@ public class ContactUsPage extends AbstractComponent{
 	@FindBy(name = "name")
 	WebElement nameBox;
 	
-	@FindBy(xpath = "input[data-qa='email']")
+	@FindBy(css = "input[data-qa='email']")
 	WebElement emailBox;
 	
 	@FindBy(name = "subject")
@@ -35,18 +38,41 @@ public class ContactUsPage extends AbstractComponent{
 	@FindBy(name = "submit")
 	WebElement submitBtn;
 	
+	@FindBy(css = "div.alert-success")
+	WebElement successMsg;
+	
+	@FindBy(linkText = "Home")
+	WebElement homeLink;
+	
 	public boolean getInTouchDisplay() {
 		
 		return getInTouchTxt.isDisplayed();
 	}
 	
-	public void contactUSFormFill(String name, String email, String subject, String message) {
+	public void contactUSFormFill(String name, String email, String subject, String message) throws IOException, InterruptedException {
 		
 		nameBox.sendKeys(name);
 		emailBox.sendKeys(email);
 		subjectBox.sendKeys(subject);
 		messageBox.sendKeys(message);
+		Thread.sleep(4000);
+		Runtime.getRuntime().exec("C:\\Users\\Team EERO\\Documents\\AutoScripts\\automationExercise.exe");
 		submitBtn.click();
+	}
+	
+	public void switchToAlertSays() {
+		
+		driver.switchTo().alert().accept();
+	}
+	
+	public String contactSuccessMsg() {
+		
+		return successMsg.getText();
+	}
+	
+	public void switchToHomePage() {
+		
+		homeLink.click();
 	}
 
 	

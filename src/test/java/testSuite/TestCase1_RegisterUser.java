@@ -8,10 +8,17 @@ import pageObjectModel_ecom.HomePage;
 import pageObjectModel_ecom.RegistrationPage;
 
 public class TestCase1_RegisterUser extends BaseTestComponent {
-	
+
 	String name = "Bashaa";
 	String email = "bashaa456@gmail.com";
 	String password = "Admin@123";
+	String lastName = "Manick";
+	String address = "IIT Madras";
+	String country = "India";
+	String state = "Chennai";
+	String city = "Chennai";
+	String zipCode = "600 036";
+	String mobileNum = "1234567890";
 
 	@Test
 	public void TestCase1() {
@@ -29,16 +36,15 @@ public class TestCase1_RegisterUser extends BaseTestComponent {
 		registrationPage.accountInformationForm(name, email, password);
 		boolean addressInfoTxtMsg = registrationPage.addressInfoMsg();
 		Assert.assertTrue(addressInfoTxtMsg);
-		registrationPage.addressInformationForm(name);
+		registrationPage.addressInformationForm(name, lastName, address, country, state, city, zipCode, mobileNum);
 		boolean accCreatedTxtMsg = registrationPage.accCreatedMsg();
-		Assert.assertTrue(accCreatedTxtMsg);	
+		Assert.assertTrue(accCreatedTxtMsg);
 		registrationPage.homeNavigation();
 		String userString = homePage.usernameCheck();
 		Assert.assertEquals("Logged in as " + userString, "Logged in as " + name);
 		boolean deleteMsg = homePage.deleteAcc();
 		Assert.assertTrue(deleteMsg);
 		homePage.cntBtnClick();
-		
 
 	}
 

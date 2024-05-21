@@ -58,62 +58,59 @@ public class RegistrationPage extends AbstractComponent {
 
 	@FindBy(xpath = "//input[@id='optin']")
 	WebElement offersCkeckBox;
-	
+
 	@FindBy(xpath = "//h2/b[contains(text(),'Address ')]")
 	WebElement addressInfoTxt;
-	
+
 	@FindBy(css = "input#first_name")
 	WebElement firstNameBox;
-	
+
 	@FindBy(id = "last_name")
 	WebElement lastNameBox;
-	
+
 	@FindBy(name = "address1")
 	WebElement addressBox;
-	
+
 	@FindBy(css = "select#country")
 	WebElement countrySelect;
-	
+
 	@FindBy(id = "state")
 	WebElement stateBox;
-	
+
 	@FindBy(xpath = "//input[@name='city']")
 	WebElement cityBox;
-	
+
 	@FindBy(id = "zipcode")
 	WebElement zipcodeBox;
-	
+
 	@FindBy(css = "input#mobile_number")
 	WebElement mobileNumBox;
-	
+
 	@FindBy(css = "button[data-qa='create-account']")
 	WebElement createBtn;
-	
+
 	@FindBy(xpath = "//h2/b")
 	WebElement accCreatedTxt;
-	
+
 	@FindBy(css = "a[data-qa='continue-button']")
 	WebElement cntBtn;
-	
+
 	@FindBy(xpath = "//h2[contains(text(),'Login')]")
 	WebElement loginUserTxt;
-	
+
 	@FindBy(name = "email")
 	WebElement loginEmail;
-	
+
 	@FindBy(css = "input[data-qa='login-password']")
 	WebElement pswBox;
-	
+
 	@FindBy(css = "button[data-qa='login-button']")
 	WebElement loginBtn;
-	
+
 	@FindBy(css = "p[style='color: red;']")
 	WebElement errorMsg;
-	
-	
-	
+
 	By incorrectMsgBy = By.cssSelector("p[style='color: red;']");
-	
 
 	public String newUserSignUp() {
 
@@ -145,59 +142,56 @@ public class RegistrationPage extends AbstractComponent {
 		yearsSelect.selectByValue("1998");
 		newsletterCheckBox.click();
 		offersCkeckBox.click();
-		
+
 	}
-	
+
 	public boolean addressInfoMsg() {
-		
+
 		return addressInfoTxt.isDisplayed();
 	}
-	
-	public void addressInformationForm(String name) {
-		
+
+	public void addressInformationForm(String name, String lastname, String address, String country, String state,
+			String city, String zipcode, String mobileNum) {
+
 		firstNameBox.sendKeys(name);
-		lastNameBox.sendKeys("Manick");
-		addressBox.sendKeys("IIT Madras");
+		lastNameBox.sendKeys(lastname);
+		addressBox.sendKeys(address);
 		Select crtSelect = new Select(countrySelect);
-		crtSelect.selectByVisibleText("India");
-		stateBox.sendKeys("Chennai");
-		cityBox.sendKeys("Chennai");
-		zipcodeBox.sendKeys("600 036");
-		mobileNumBox.sendKeys("1234567890");
+		crtSelect.selectByVisibleText(country);
+		stateBox.sendKeys(state);
+		cityBox.sendKeys(city);
+		zipcodeBox.sendKeys(zipcode);
+		mobileNumBox.sendKeys(mobileNum);
 		createBtn.click();
 	}
-	
+
 	public boolean accCreatedMsg() {
-		
+
 		return accCreatedTxt.isDisplayed();
 	}
-	
+
 	public void homeNavigation() {
-		
+
 		cntBtn.click();
 	}
-	
+
 	public String userLogin() {
-		
+
 		String loginUserMsg = loginUserTxt.getText();
 		return loginUserMsg;
 	}
-	
+
 	public void Login(String email, String password) {
-		
+
 		loginEmail.sendKeys(email);
 		pswBox.sendKeys(password);
 		loginBtn.click();
 	}
-	
+
 	public String errorMsgElement() {
-		
+
 		waitForElementToBePresent(incorrectMsgBy);
 		return errorMsg.getText();
 	}
-	
-	
-	
-	
 
 }

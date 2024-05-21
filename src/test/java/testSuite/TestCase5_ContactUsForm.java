@@ -1,5 +1,7 @@
 package testSuite;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import baseTestPack.BaseTestComponent;
@@ -16,13 +18,20 @@ public class TestCase5_ContactUsForm extends BaseTestComponent{
 	
 	
 	@Test
-	public void TestCase5() {
+	public void TestCase5() throws IOException, InterruptedException {
 		
 		HomePage homePage = new HomePage(driver);
 		homePage.goTo();
 		ContactUsPage contactUsPage = homePage.contactUs();
 		boolean getInTouchVisibility = contactUsPage.getInTouchDisplay();
 		Assert.assertTrue(getInTouchVisibility);
+		contactUsPage.contactUSFormFill(name, email, subject, message);
+		contactUsPage.switchToAlertSays();
+		String successMsg = contactUsPage.contactSuccessMsg();
+		Assert.assertEquals(successMsg, "Success! Your details have been submitted successfully.");
+		contactUsPage.switchToHomePage();
+		Boolean homePageVisible = homePage.homePageVisibility();
+		Assert.assertTrue(homePageVisible);
 		
 		
 	}
