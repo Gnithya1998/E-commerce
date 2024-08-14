@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testSuite.TestCase17_ViewCategoryProds">
+      <class name="module_Selenium.DataPraviderExcel">
         <methods>
-          <include name="TestCase17"/>
-          <include name="tearDown"/>
-          <include name="SetUp"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- testSuite.TestCase17_ViewCategoryProds -->
+      </class> <!-- module_Selenium.DataPraviderExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

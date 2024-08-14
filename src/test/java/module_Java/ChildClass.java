@@ -1,12 +1,19 @@
 package module_Java;
 
+import java.util.Arrays;
+
 public class ChildClass extends ParentClass{
 
 	public static void main(String[] args) {
-		ChildClass obj = new ChildClass();
+		
+		//ChildClass obj = new ChildClass();
+		ParentClass obj = new ParentClass();
+		
 		obj.wheel();
-		obj.backCamera();
+	//	obj.backCamera();
 		obj.colour();
+		
+		
 
 	}
 	

@@ -37,6 +37,12 @@ public class AbstractComponent {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 	}
+    
+   public void waitForVisibilityOfElement1(WebElement WebElement) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(WebElement));
+	}
 
 	
 	public void scrollDown() {

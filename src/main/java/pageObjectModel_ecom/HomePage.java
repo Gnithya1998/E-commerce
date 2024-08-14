@@ -93,6 +93,13 @@ public class HomePage extends AbstractComponent{
     @FindBy(css = "a[href='#Women'] span.badge.pull-right")
     WebElement womenCategoryElement;
     
+    @FindBy(css = "div.recommended_items")
+    WebElement recomItemsTabElement;
+    
+    @FindBy(id = "recommended-item-carousel")
+    WebElement recomItemsID;
+    
+    
    
     
     
@@ -103,6 +110,7 @@ public class HomePage extends AbstractComponent{
     By viewProdBy = By.linkText("View Product");
     By quantityBy = By.name("quantity");
     By womenIdBy = By.xpath("//div[@id='Women']//li");
+    By titleBy = By.cssSelector("h2.title");
 	
 	
 	
@@ -249,6 +257,10 @@ public class HomePage extends AbstractComponent{
 		 
 	 }
 	 
-	 
+	 public String getRecomItemTitle() {
+		 
+		 scrollToElement(recomItemsTabElement);
+		 return recomItemsTabElement.findElement(titleBy).getText();
+	 }
 
 }
